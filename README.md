@@ -1,8 +1,8 @@
 # food_hacks
 Computer Vision and Grocery Stores: A Deep Learning Methodology to Solve World Hunger
 
-* T-1 Best Hack at SAP iXP Hackathon
-* "Most Impact" Hack
+* *T-1 Best Hack at SAP iXP Hackathon*
+* *"Most Impact" Hack*
 
 Here, we use computer vision techniques to assess food quality, and dynamically assess price
 from a number of sources of data, including color, food type, growth stage, season, and location.
