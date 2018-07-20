@@ -9,7 +9,7 @@ def create_experiments(ID):
 			'df_input':'./fruit_image_index.csv'}]
 	opt = []
 
-	for network in ['vggnet', 'resnet', 'inceptionv3']:
+	for network in ['vggnet', 'resnet', 'inceptionv3', 'inception_res']:
 		for dataset in ['Color', 'Fruit', 'Description']:
 			tmp = dict(opt_tmp[0])
 
