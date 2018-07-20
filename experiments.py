@@ -15,8 +15,6 @@ def create_experiments(ID):
 
 			tmp['dataset'] = dataset
 			tmp['network'] = network
-			tmp['batch_size'] = batch_size
-			tmp['input_shape'] = input_shape
 
 			opt.append(tmp)
 
