@@ -3,7 +3,7 @@
 #SBATCH --array=0-8
 #SBATCH --job-name=food_hacks
 #SBATCH --mem=10GB
-#SBATCH --gres=gpu:titan-x:1
+#SBATCH --gres=gpu:tesla-k80:1
 #SBATCH -t 03:00:00
 #SBATCH --workdir=./subs/
 
