@@ -1,6 +1,9 @@
 # food_hacks
 Computer Vision and Grocery Stores: A Deep Learning Methodology to Solve World Hunger
 
+* T-1 Best Hack at SAP iXP Hackathon
+* "Most Impact" Hack
+
 Here, we use computer vision techniques to assess food quality, and dynamically assess price
 from a number of sources of data, including color, food type, growth stage, season, and location.
 
@@ -20,7 +23,7 @@ for the large amount of training data, the input pipeline is optimized for maxim
 to streamline training.
 
 Validation Accuracies were achieved for the following categories with Deep Neural Nets:
-* Color: 60%
+* Color: 70%
 * Food: 96%
 * Quality: 70%
 
