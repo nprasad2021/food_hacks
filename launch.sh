@@ -7,5 +7,6 @@
 #SBATCH -t 03:00:00
 #SBATCH --workdir=./subs/
 
+cd ..
 singularity exec -B /om:/om --nv /om/user/nprasad/singularity/belledon-tensorflow-keras-master-latest.simg \
 python /om/user/nprasad/food_hacks/main.py ${SLURM_ARRAY_TASK_ID}
