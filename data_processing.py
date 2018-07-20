@@ -15,9 +15,6 @@ from scipy.misc import imread
 
 # training generator configuration
 def create_dataset(df, class_name, recreate=True):
-    if recreate:
-        if os.path.exists('./data/' + class_name + '/'):
-            shutil.rmtree('./data/' + class_name + '/')
 
     category_tmp = df[class_name].tolist()
     category = [x.replace(' ', '_') for x in category_tmp]
