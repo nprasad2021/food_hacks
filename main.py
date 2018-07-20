@@ -48,7 +48,8 @@ def run():
 	training_generator, validation_generator = data_processing.get_gen(dataset)
 
 	filepath = 'models/' + dataset + '/'
-	best_model_checkpoint = ModelCheckpoint(filepath + nnet + ".hdf5", monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+	accessory = nnet + '_' + str(batch_size) + '_' + str(input_shape[0])
+	best_model_checkpoint = ModelCheckpoint(filepath + accessory + ".hdf5", monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 	
 	if not os.path.exists(filepath):
 		os.makedirs(filepath)
@@ -76,13 +77,13 @@ def run():
 		validation_generator,
 		steps=nb_validation_samples/batch_size)
 
-	column_names = ['accuracy', 'network', 'dataset', 'batch_size', 'epochs']
+	column_names = ['accuracy', 'network', 'dataset', 'batch_size', 'epochs', 'image_size']
 	if os.path.exists(DF_OUT):
 		df_out = pd.read_csv(DF_OUT)
 	else:
 		df_out = pd.DataFrame(columns=column_names)
 
-	tmp = [acc, nnet, dataset, batch_size, epochs]
+	tmp = [acc, nnet, dataset, batch_size, epochs, input_shape[0]]
 	df_out.loc[df_out.shape[0]] = tmp
 	df_out.to_csv(DF_OUT,index=False)
 
