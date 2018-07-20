@@ -10,7 +10,8 @@ import numpy as np
 import shutil
 import random
 import pandas as pd
-import cv2 as cv
+from scipy.misc import imread
+
 
 # training generator configuration
 def create_dataset(df, class_name, recreate=True):
@@ -29,18 +30,20 @@ def create_dataset(df, class_name, recreate=True):
 
     num_images = len(category_shuffle)
     i = 0
-    subdir = 'train'
 
     for cat, path in zip(category_shuffle, image_path_shuffle):
-
-        if i == int(num_images*.9):
-            subdir = 'validation'
         i += 1
         try:
-            a = cv.imread(path)
+            a = imread(path).shape
         except:
-            print('warning: image not read')
+            print('ERROR:', path, 'NOT READ')
             continue
+
+        if i >= int(num_images*.9):
+            subdir = 'validation'
+        else:
+            subdir = 'train'
+        
 
         class_path = './data/' + class_name + '/' + subdir + '/' + cat + '/' 
 
