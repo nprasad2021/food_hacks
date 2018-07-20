@@ -54,8 +54,11 @@ def create_dataset(df, class_name, recreate=True):
         
         if os.path.exists(class_image):
             continue
-
-        shutil.copy(path, class_image)
+        try:
+            shutil.copy(path, class_image)
+        except:
+            print('ERROR:', path, 'NOT COPIED')
+            continue
         
 
     return len(df), num_classes
