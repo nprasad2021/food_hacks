@@ -1,11 +1,44 @@
 # food_hacks
 Computer Vision and Grocery Stores: A Deep Learning Methodology to Solve World Hunger
 
-* *T-1 Best Hack at SAP iXP Hackathon*
-* *"Most Impact" Hack*
+* **T-1 Best Hack at SAP iXP Hackathon**
+* **"Most Impact" Hack**
 
 Here, we use computer vision techniques to assess food quality, and dynamically assess price
 from a number of sources of data, including color, food type, growth stage, season, and location.
+
+## How to Run
+Clone this repository
+
+```
+git clone git@github.com:nprasad2021/food_hacks.git
+```
+
+Create file in format of 'fruit_image_index.csv' with your desired search queries in repo
+Scrape images from Google
+
+```
+python scraper.py
+```
+
+Follow instructions on interactive console to download (100) images per search query indicated in your csv file.
+Either restart (r) or continue (c), based on your progress.
+
+To train the model, run:
+
+```
+python main.py $VAR
+```
+where $VAR is an integer between 0 and 11 indicated type of net and dataset to use.
+
+To run the web-app, run:
+
+```
+cd keras-flask-webapp
+python app.py
+```
+
+Navigate to the web-page, and you can now use the model!
 
 ## Image Scraping
 
