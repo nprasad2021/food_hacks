@@ -11,16 +11,14 @@ def create_experiments(ID):
 
 	for network in ['vggnet', 'resnet', 'inceptionv3', 'inception_res']:
 		for dataset in ['Color', 'Fruit', 'Description']:
-			for batch_size in [32, 64, 128]:
-				for input_shape in [(224,224,3), (256, 256, 3)]:
-					tmp = dict(opt_tmp[0])
+			tmp = dict(opt_tmp[0])
 
-					tmp['dataset'] = dataset
-					tmp['network'] = network
-					tmp['batch_size'] = batch_size
-					tmp['input_shape'] = input_shape
+			tmp['dataset'] = dataset
+			tmp['network'] = network
+			tmp['batch_size'] = batch_size
+			tmp['input_shape'] = input_shape
 
-					opt.append(tmp)
+			opt.append(tmp)
 
 	return opt[ID]
 
