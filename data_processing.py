@@ -61,7 +61,7 @@ def create_dataset(df, class_name, recreate=True):
     return len(df), num_classes
 
 def read_and_create(df_input_path, class_name):
-
+    print('workding directory', os.getcwd())
     df = pd.read_csv(df_input_path)
     df_length, num_classes = create_dataset(df, class_name)
     return df_length, num_classes
