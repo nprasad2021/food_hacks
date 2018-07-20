@@ -27,7 +27,7 @@ archs = nets.all_nets()
 
 def run():
 
-	df_length, num_classes = data_processing.read_and_create(opt['df_input'], dataset)
+	df_length, num_classes = data_processing.read_and_create('./fruit_image_index.csv', dataset)
 
 	base_model = archs[nnet](input_shape)
 	x = base_model.output
