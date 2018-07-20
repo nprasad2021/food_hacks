@@ -11,6 +11,8 @@ import shutil
 import random
 import pandas as pd
 from scipy.misc import imread
+import pickle
+import sys
 
 
 # training generator configuration
@@ -89,6 +91,8 @@ def get_gen(dataset, batch_size=64, epochs=100, img_dim = (224,224), input_shape
         batch_size=batch_size,
         class_mode='categorical',
         shuffle=True)
+    print(training_generator.class_indices)
+
 
     # validation generator configuration
     validation_data_dir = './data/' + dataset + '/validation/'
@@ -102,6 +106,8 @@ def get_gen(dataset, batch_size=64, epochs=100, img_dim = (224,224), input_shape
         target_size=(img_height, img_width),
         batch_size=batch_size,
         class_mode='categorical')
+    print(validation_generator.class_indices)
+    print(validation_generator.classes)
 
     return training_generator, validation_generator
 
