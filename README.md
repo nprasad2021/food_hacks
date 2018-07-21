@@ -31,14 +31,14 @@ python main.py $VAR
 ```
 where $VAR is an integer between 0 and 11 indicated type of net and dataset to use.
 
-To run the web-app, run:
+To open the web-app, run:
 
 ```
 cd keras-flask-webapp
 python app.py
 ```
 
-Navigate to the web-page, and you can now use the model!
+Navigate to the web-page, and play around!
 
 ## Image Scraping
 
